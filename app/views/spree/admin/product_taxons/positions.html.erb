@@ -1,5 +1,7 @@
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
+<h1>Reorder Categories</h1>
+
 <ul class="products_ul" id='taxons_ul'>
   <% Spree::Taxon.order('nav_position ASC').each do |taxon| %>
     <% unless taxon.name == 'Category' %>
@@ -14,7 +16,7 @@
 
 
 
-<h1><%= t('positions_for_products_in_taxons') %></h1>
+<h1>Reorder Products within Categories</h1>
 
 <% @taxons.each do |taxon| %>
   <h2><%= taxon.name %></h2>
