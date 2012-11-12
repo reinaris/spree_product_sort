@@ -4,11 +4,7 @@ ul.products_ul {
   border: 1px solid #CCC;
 }
 
-ul#taxons_ul li {
-  background-color:#CFE8D3;
-}
-
-.products_ul li {
+ul.products_ul li {
   border: 1px solid #DDD;
   background-color: #F9F9F9;
   list-style: none;
@@ -16,10 +12,10 @@ ul#taxons_ul li {
   padding: 3px;
 }
 
-.products_ul li .handle {
+ul.products_ul li .handle {
   display: inline-block;
   color: silver;
-  width: 1.5em;
-  cursor: row-resize;
+  width: 15px;
+  cursor: move;
   text-align: center;
 }
