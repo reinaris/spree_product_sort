@@ -1,11 +1,12 @@
 ul.products_ul {
   list-type: none;
-  margin-left: 20px;
+  margin-left: 10px;
   border: 1px solid #CCC;
+  border-bottom: 0;
 }
 
 ul.products_ul li {
-  border: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
   background-color: #F9F9F9;
   list-style: none;
   margin-left: 0;
