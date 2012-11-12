@@ -2,7 +2,6 @@ Spree::Core::Engine.routes.prepend do
   
   namespace :admin do
 		# callback for jQuery sort action
-    match 'taxons/reorder_taxons' => 'taxons#reorder_taxons', :via => :put, :as => :taxon_sort
     match 'taxons/reorder_products/:id' => 'taxons#reorder_products', :via => :put
     match 'product_taxons/positions' => 'product_taxons#positions', :as => :product_sort
     resources :product_taxons do
