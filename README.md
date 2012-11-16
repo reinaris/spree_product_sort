@@ -24,4 +24,4 @@ Add Migration and assets
 
 ### Known Issues
 
-    - it will break spree's sample_data import 
+- it will break spree's sample_data import 
