@@ -9,6 +9,8 @@ A product decorator is added which only will show products with a direct relatio
 
 Based on: [https://github.com/jdevine/spree-ordering-in-taxons](https://github.com/jdevine/spree-ordering-in-taxons)
 
+### Installation
+
 Add gem 
 
     gem 'spree_product_sort', :git => 'https://github.com/oxpeck/spree_product_sort.git'
@@ -19,3 +21,7 @@ Use branch '1-2-stable' for Spree 1-2-stable versions.
 Add Migration and assets
 
     rails g spree_product_sort:install
+
+### Known Issues
+
+    - it will break spree's sample_data import 
