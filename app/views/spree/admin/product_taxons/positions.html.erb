@@ -4,7 +4,7 @@
 
 <% @taxons.each do |taxon| %>
 
-  <h2><%= taxon.name %></h2>
+  <h2><%= taxon.permalink %></h2>
   
   <%= render :partial=> 'product_list', :locals => {:taxon => taxon} %>
 
