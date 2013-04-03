@@ -1,12 +1,13 @@
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
-
 <h1><%= t(:positions_for_products_in_taxons) %></h1>
-
-<% @taxons.each do |taxon| %>
-
-  <h2><%= taxon.permalink %></h2>
-  
-  <%= render :partial=> 'product_list', :locals => {:taxon => taxon} %>
+<%= form_tag("/admin/product_taxons/positions", method: "get") do %>
+	<%= select_tag(:taxon_id, options_from_collection_for_select(@taxons, :id, :permalink, params[:taxon_id])) %>
+	<%= submit_tag("Select") %>
+<% end %>
+<% if params[:taxon_id].present? %>
+	<br/>
+	<h2><%= "#{@taxon.name} (#{@taxon.permalink})" %></h2>
+	<%= render :partial=> 'product_list', :locals => {:taxon => @taxon} %>
 
 	<% content_for :head do %>
 	  <script type="text/javascript">
@@ -17,7 +18,7 @@
 			      axis:'y',
 			      handle:'.handle',
 			      update: function(){
-			        $.post('/admin/taxons/reorder_products/<%=taxon.id || 0%>',
+			        $.post('/admin/taxons/reorder_products/<%= @taxon.id || 0 %>',
 			               '_method=put&'+$(this).sortable('serialize'))
 			      }
 			    }
@@ -25,5 +26,7 @@
 			});
 	  </script>
 	<% end %>
-
 <% end %>
+<script type="text/javascript">
+	$('#taxon_id').select2();
+</script>
