@@ -1,5 +1,5 @@
-Spree::Core::Engine.routes.prepend do
-  
+Spree::Core::Engine.append_routes do
+
   namespace :admin do
 		# callback for jQuery sort action
     put 'taxons/reorder_products/:id' => 'taxons#reorder_products'
@@ -9,6 +9,6 @@ Spree::Core::Engine.routes.prepend do
         get :positions
       end
     end
-      
+
   end
 end
